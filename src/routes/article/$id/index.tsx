@@ -16,17 +16,33 @@ export const Route = createFileRoute("/article/$id/")({
     if (!article) throw notFound();
     return { article };
   },
-  head: ({ loaderData }) => ({
-    meta: loaderData
-      ? [{ title: `${loaderData.article.title} | ${loaderData.article.author.join(", ")}` }]
-      : [],
-    links: [
-      {
-        rel: "stylesheet",
-        href: styles,
-      },
-    ],
-  }),
+  head: ({ loaderData }) => {
+    return {
+      meta: loaderData
+        ? [
+            { title: `${loaderData.article.title} | ${loaderData.article.author.join(", ")}` },
+            { name: "description", content: loaderData.article.description },
+
+            // Open Graph
+            { property: "og:title", content: loaderData.article.title },
+            { property: "og:description", content: loaderData.article.description },
+            { property: "og:type", content: "article" },
+
+            // Twitter
+            { property: "twitter:card", content: "summary" },
+            { property: "twitter:title", content: loaderData.article.title },
+            { property: "twitter:description", content: loaderData.article.description },
+            { property: "twitter:type", content: "article" },
+          ]
+        : [],
+      links: [
+        {
+          rel: "stylesheet",
+          href: styles,
+        },
+      ],
+    };
+  },
   component: RouteComponent,
   notFoundComponent: () => <NotFoundArticle />,
 });

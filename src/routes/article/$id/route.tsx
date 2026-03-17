@@ -10,7 +10,7 @@ function RouteComponent() {
   return (
     <div className="mx-auto flex w-4xl max-w-full flex-col gap-6 p-6 md:p-10 lg:p-16">
       <button
-        className="flex w-fit flex-row items-center gap-2 text-muted"
+        className="flex w-fit flex-row items-center gap-2 text-muted transition-colors hover:text-accent"
         onClick={() => router.history.back()}
       >
         <ArrowArcLeftIcon />

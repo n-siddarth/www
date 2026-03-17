@@ -2,6 +2,8 @@ import { TanStackDevtools } from "@tanstack/react-devtools";
 import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 
+import { RootNotFound } from "#/components/root-not-found";
+
 import appCss from "../styles.css?url";
 
 export const Route = createRootRoute({
@@ -25,6 +27,7 @@ export const Route = createRootRoute({
       },
     ],
   }),
+  notFoundComponent: () => <RootNotFound />,
   shellComponent: RootDocument,
 });
 

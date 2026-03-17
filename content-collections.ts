@@ -8,6 +8,7 @@ const articles = defineCollection({
   include: "**/*.{md,mdx}",
   schema: z.object({
     title: z.string(),
+    description: z.string(),
     author: z.string().array().min(1),
     published: z.string().transform((v) => new Date(v)),
     finalized: z.boolean(),

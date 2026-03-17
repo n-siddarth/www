@@ -1,5 +1,6 @@
 ---
 title: "Spot the Bug 0001"
+description: An interesting JavaScript regular expression bug and some debugging.
 published: 03/17/2026
 author: ["Siddarth Narayanan"]
 finalized: true

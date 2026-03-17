@@ -113,5 +113,5 @@ a {
 }
 
 button {
-  @apply hover:cursor-pointer hover:text-accent;
+  @apply hover:cursor-pointer;
 }

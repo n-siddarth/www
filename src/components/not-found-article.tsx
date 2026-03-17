@@ -5,7 +5,7 @@ export function NotFoundArticle() {
     <div className="article">
       <p>
         This is awkward... it seems like that article does not exist. If you want, you can go{" "}
-        <Link to="/">home</Link>, or you may ponder the philosophical meaning of getting lost with
+        <Link to="/">Home</Link>, or you may ponder the philosophical meaning of getting lost with
         me.
       </p>
 
