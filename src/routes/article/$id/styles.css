@@ -1,0 +1,83 @@
+@reference "../../../styles.css";
+
+.article {
+  @apply text-base/85 *:mb-4;
+
+  h1 {
+    @apply text-[1.8rem];
+  }
+
+  h2 {
+    @apply text-[1.7rem];
+  }
+
+  h3 {
+    @apply text-[1.5rem];
+  }
+  h4 {
+    @apply text-[1.35rem];
+  }
+  h5 {
+    @apply text-[1.15rem];
+  }
+  h6 {
+    @apply text-[1rem];
+  }
+
+  code {
+    @apply font-mono;
+  }
+
+  :not(pre) > code {
+    @apply rounded-md border border-card bg-l1 px-1 py-px text-accent;
+  }
+
+  hr {
+    @apply text-border-card;
+  }
+
+  .shiki {
+    background-color: transparent !important;
+
+    code {
+      @apply block w-fit py-4;
+      span.line {
+        @apply inline-block w-full px-4;
+      }
+      span.highlighted {
+        @apply bg-[white]/10;
+      }
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .shiki {
+      span {
+        color: var(--shiki-dark) !important;
+      }
+    }
+  }
+
+  ol {
+    list-style: decimal;
+    margin-left: 2rem;
+  }
+
+  ul {
+    list-style: disc;
+    margin-left: 2rem;
+  }
+
+  a {
+    @apply text-base-bright underline decoration-muted/35 decoration-1 underline-offset-3 hover:text-accent;
+  }
+
+  blockquote {
+    border-left: 4px solid var(--fg-muted);
+    padding: 0.25rem 0;
+
+    & > * {
+      margin-left: 1rem;
+    }
+  }
+}

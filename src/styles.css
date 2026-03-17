@@ -1,0 +1,117 @@
+@import "@fontsource-variable/geist-mono";
+@import "@fontsource-variable/manrope";
+@import "tailwindcss";
+
+/* Light mode colors */
+:root {
+  --bg-base: #ede8e8;
+  --fg-base: #342424;
+  --fg-base-bright: #000000;
+  --fg-muted: #706565;
+  --fg-accent: #1f7a69;
+  --bg-accent: #2ba08a;
+  --bg-l1: #f3f0f0;
+  --border-card: #c2c2c2;
+}
+
+/* Dark mode colors */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-base: #131313;
+    --fg-base: #f8f6f6;
+    --fg-base-bright: #ffffff;
+    --fg-muted: #818181;
+    --fg-accent: #32b0a1;
+    --bg-accent: #217269;
+    --bg-l1: #191919;
+    --border-card: #333333;
+  }
+}
+
+@theme inline {
+  --font-heading: "Manrope Variable", ui-sans-serif, sans-serif;
+  --font-body: "Manrope Variable", ui-sans-serif, sans-serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, monospace;
+
+  --background-color-*: initial;
+  --background-color-base: var(--bg-base);
+  --background-color-accent: var(--bg-accent);
+  --background-color-l1: var(--bg-l1);
+
+  --color-*: initial;
+  --color-base: var(--fg-base);
+  --color-base-bright: var(--fg-base-bright);
+  --color-muted: var(--fg-muted);
+  --color-accent: var(--fg-accent);
+  --color-border-card: var(--border-card);
+
+  --border-color-*: initial;
+  --border-color-card: var(--border-card);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--fg-base);
+  background-color: var(--bg-base);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.45rem;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+h6 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+a {
+  @apply underline decoration-muted/35 decoration-1 underline-offset-3 transition-colors hover:text-accent;
+}
+
+button {
+  @apply hover:cursor-pointer hover:text-accent;
+}
