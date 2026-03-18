@@ -69,7 +69,7 @@
   }
 
   a {
-    @apply text-base-bright underline decoration-muted/35 decoration-1 underline-offset-3 hover:text-accent;
+    @apply text-base-bright hover:text-accent;
   }
 
   blockquote {

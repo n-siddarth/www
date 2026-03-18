@@ -109,7 +109,7 @@ h6 {
 }
 
 a {
-  @apply underline decoration-muted/35 decoration-1 underline-offset-3 transition-colors hover:text-accent;
+  @apply border-b border-card transition-colors hover:text-accent;
 }
 
 button {

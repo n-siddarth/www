@@ -1,4 +1,4 @@
-import { ArrowSquareOutIcon } from "@phosphor-icons/react";
+import { ArrowSquareOutIcon, GithubLogoIcon, LinkedinLogoIcon } from "@phosphor-icons/react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { allArticles } from "content";
 
@@ -13,7 +13,7 @@ function App() {
     sortedArticles = sortedArticles.filter((a) => a.finalized);
   }
   return (
-    <main className="mx-auto w-4xl max-w-full p-6 md:p-8 lg:p-16">
+    <main className="mx-auto flex h-screen w-4xl max-w-full flex-col gap-6 p-6 pb-0 md:p-8 lg:p-16">
       <div className="flex flex-col gap-1">
         <p className="text-sm text-muted">Hi 👋, I'm</p>
         <h4>Siddarth Narayanan</h4>
@@ -27,7 +27,7 @@ function App() {
           Software Engineer at Prudential.
         </p>
       </div>
-      <div className="mt-20 flex flex-col gap-2">
+      <div className="mt-20 flex grow flex-col gap-2">
         {sortedArticles.map((a) => (
           <div key={a._meta.path} className="flex flex-row items-center">
             <p className="w-32 text-muted">
@@ -35,11 +35,31 @@ function App() {
                 dateStyle: "medium",
               }).format(a.published)}
             </p>
-            <Link className="px-1.5 py-0.5" to="/article/$id" params={{ id: a._meta.path }}>
+            <Link to="/article/$id" params={{ id: a._meta.path }}>
               <p>{a.title}</p>
             </Link>
           </div>
         ))}
+      </div>
+      <div className="flex flex-row items-center gap-3 text-sm text-muted">
+        <a
+          href="https://linkedin.com/in/siddarth-narayanan1"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <LinkedinLogoIcon className="inline" /> @siddarth-narayanan1
+        </a>
+        <a href="https://github.com/n-siddarth" target="_blank" rel="noreferrer noopener">
+          <GithubLogoIcon className="inline" /> @n-siddarth
+        </a>
+        <a
+          className="ml-auto"
+          href="https://github.com/n-siddarth/www"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <GithubLogoIcon className="inline" /> Source
+        </a>
       </div>
     </main>
   );
