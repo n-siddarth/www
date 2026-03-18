@@ -13,13 +13,13 @@ function App() {
     sortedArticles = sortedArticles.filter((a) => a.finalized);
   }
   return (
-    <main className="mx-auto flex h-screen w-4xl max-w-full flex-col gap-6 p-6 pb-0 md:p-8 lg:p-16">
+    <main className="mx-auto flex h-screen w-4xl max-w-full flex-col gap-6 p-6 md:p-8 lg:p-16">
       <div className="flex flex-col gap-1">
         <p className="text-sm text-muted">Hi 👋, I'm</p>
         <h4>Siddarth Narayanan</h4>
         <p className="text-sm text-muted">
           I am currently building{" "}
-          <a href="https://tondova.com" target="_blank">
+          <a href="https://tondova.com" target="_blank" rel="noreferrer noopener">
             Tondova <ArrowSquareOutIcon className="mb-px inline" />
           </a>
           , a knowledge management tool for interconnected thought. I am also a student at Rutgers
@@ -27,7 +27,7 @@ function App() {
           Software Engineer at Prudential.
         </p>
       </div>
-      <div className="mt-20 flex grow flex-col gap-2">
+      <div className="mt-20 flex h-full flex-col gap-2">
         {sortedArticles.map((a) => (
           <div key={a._meta.path} className="flex flex-row items-center">
             <p className="w-32 text-muted">
@@ -41,24 +41,30 @@ function App() {
           </div>
         ))}
       </div>
-      <div className="flex flex-row items-center gap-3 text-sm text-muted">
+      <div className="flex flex-row flex-wrap items-center justify-start gap-3 text-muted">
         <a
+          className="text-nowrap"
           href="https://linkedin.com/in/siddarth-narayanan1"
           target="_blank"
           rel="noreferrer noopener"
         >
-          <LinkedinLogoIcon className="inline" /> @siddarth-narayanan1
-        </a>
-        <a href="https://github.com/n-siddarth" target="_blank" rel="noreferrer noopener">
-          <GithubLogoIcon className="inline" /> @n-siddarth
+          <LinkedinLogoIcon className="inline" />
         </a>
         <a
-          className="ml-auto"
+          className="text-nowrap"
+          href="https://github.com/n-siddarth"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <GithubLogoIcon className="inline" />
+        </a>
+        <a
+          className="ml-auto text-nowrap"
           href="https://github.com/n-siddarth/www"
           target="_blank"
           rel="noreferrer noopener"
         >
-          <GithubLogoIcon className="inline" /> Source
+          Source
         </a>
       </div>
     </main>
